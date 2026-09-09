@@ -20,17 +20,20 @@
 .hero-card-wrapper {
   position: relative;
   width: 100%;
-  border-radius: 24px;
-  overflow: visible; /* Allows the review badge to hang outside the card edge */
+  background: transparent; /* <--- Removes any background from the outer wrapper */
+  box-shadow: none; /* <--- Removes the old square box shadow */
+  border-radius: 0; /* <--- Removes old wrapper corners */
+  overflow: visible;
   display: flex;
   min-height: 700px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
 }
 
 .hero-image-container {
   width: 100%;
   height: 700px;
   position: relative;
+  background: transparent; /* <--- Ensures no hidden background box lingers here */
+  overflow: visible;
 }
 
 .hero-cleaning-img {
@@ -38,27 +41,28 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 140px; /* <--- Keeps your clean oval shape on the image */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06); /* <--- Moves the smooth shadow onto the oval image itself */
 }
-
 /* ==========================================
-   FLOATING REVIEW BADGE (Pushed outside left edge)
+   FLOATING REVIEW BADGE (Pushed fully outside)
    ========================================== */
 .hero-floating-badge {
   position: absolute;
-  top: 80px;
-  left: -90px; /* Negative value positions it outside the photo container */
+  top: 90px;
+  left: -70px; /* <--- Pushes it completely outside the left edge into clear space */
   background-color: #ffffff;
-  padding: 14px 18px;
+  padding: 16px 20px;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   display: flex;
-  align-items: center;
-  gap: 14px;
-  z-index: 20;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 50; /* High z-index ensures it sits cleanly on top */
   border: 1px solid rgba(0, 0, 0, 0.04);
-  white-space: nowrap;
+  width: 200px;
 }
-
 .badge-avatars {
   display: flex;
   align-items: center;
@@ -97,6 +101,7 @@
   color: #4b5563;
   line-height: 1.35;
   font-weight: 500;
+  white-space: normal;
 }
 
 .badge-text-content strong {
@@ -105,6 +110,7 @@
   font-size: 0.9rem;
   color: #111111;
   letter-spacing: -0.02em;
+  margin-bottom: 2px;
 }
 
 /* ==========================================
@@ -118,18 +124,19 @@
   width: 440px;
   background-color: #ffffff;
   border-radius: 20px;
-  padding: 0px 36px 30px 36px; /* Top padding set to 0 to sit close to the top border */
+  padding: 0px 36px 30px 36px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  z-index: 10;
 }
 
 .hero-title {
   font-size: 2.25rem;
   font-weight: 800;
   color: #0f172a;
-  margin-top: 30px; /* Controls distance from the top border */
+  margin-top: 30px;
   margin-bottom: 12px;
   letter-spacing: -0.04em;
   line-height: 1.08;
@@ -188,7 +195,6 @@
   background-color: #f3bd20;
 }
 
-/* Trust points row under button */
 .hero-trust-points {
   display: flex;
   justify-content: center;
@@ -205,7 +211,6 @@
   .hero-card-wrapper {
     flex-direction: column;
     min-height: auto;
-    overflow: hidden;
   }
   .hero-content-box {
     position: relative;

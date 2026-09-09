@@ -13,7 +13,7 @@ function Hero() {
               alt="BMB Cleaning Professional"
               className="hero-cleaning-img"
             />
-            {/* Floating Review Badge Overlay */}
+            {/* Floating Review Badge moved here so it can hang outside safely */}
             <div className="hero-floating-badge">
               <div className="badge-avatars">
                 <img
