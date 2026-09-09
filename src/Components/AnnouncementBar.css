@@ -1,0 +1,37 @@
+.announcement-bar {
+  width: 100%;
+  background-color: #fffbeb; /* Soft light yellow/cream tone */
+  border-bottom: 1px solid #fef3c7;
+  padding: 10px 16px;
+  text-align: center;
+  font-family:
+    "Plus Jakarta Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.announcement-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: #92400e;
+}
+
+.announcement-badge {
+  background-color: #f59e0b;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.announcement-content strong {
+  font-weight: 800;
+}

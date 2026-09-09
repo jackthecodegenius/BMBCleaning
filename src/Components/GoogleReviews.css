@@ -1,0 +1,75 @@
+.google-reviews-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 40px 0 60px 0;
+  font-family:
+    "Plus Jakarta Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.reviews-container {
+  max-width: 1128px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* The separator line above the title */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #e5e7eb;
+  margin-bottom: 40px;
+}
+
+/* The "Verified Customer Reviews" title */
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #111111;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+
+/* Trust Badge Banner Styling */
+.verified-badge-banner {
+  display: inline-flex; /* Shrinks the card to fit its content nicely */
+  align-items: center;
+  gap: 16px;
+  background-color: #f9fafb;
+  border: 1px solid #f3f4f6;
+  border-radius: 12px;
+  padding: 16px 24px;
+  margin-bottom: 32px;
+}
+
+.badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.badge-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.badge-heading {
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: #111111;
+  letter-spacing: -0.02em;
+}
+
+.badge-subtext {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #4b5563;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
