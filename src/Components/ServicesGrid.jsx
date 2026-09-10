@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PricingCalculator from "./PricingCalculator"; // Import the new component
 import "./ServicesGrid.css";
 
 export default function ServicesGrid() {
@@ -10,7 +11,7 @@ export default function ServicesGrid() {
       description:
         "Ongoing house cleaning designed to help maintain a cleaner home week to week or fortnight to fortnight.",
       badge: "Best for recurring upkeep",
-      videoUrl: "https://www.instagram.com/p/C_bAcPBMqtQ/embed", // Replace with your public Instagram reel/video URL
+      videoUrl: "https://www.instagram.com/p/C_bAcPBMqtQ/embed",
     },
     {
       title: "Deep Cleaning",
@@ -55,7 +56,6 @@ export default function ServicesGrid() {
         <div className="services-grid-cards">
           {services.map((service, index) => (
             <div className="service-item-card" key={index}>
-              {/* Empty placeholder picture box */}
               <div className="service-img-placeholder">
                 <span className="placeholder-text">Image Coming Soon</span>
               </div>
@@ -76,9 +76,14 @@ export default function ServicesGrid() {
             </div>
           ))}
         </div>
+
+        {/* ==========================================
+            NEW: Imported Pricing Component
+            ========================================== */}
+        <PricingCalculator />
       </div>
 
-      {/* Video Popup Modal */}
+      {/* Video Popup Modal remains here as it relates to the grid */}
       {activeVideo && (
         <div
           className="video-modal-overlay"

@@ -1,0 +1,217 @@
+/* ==========================================
+    PRICING ESTIMATION CHART STYLING
+    ========================================== */
+.pricing-calculator-section {
+  width: 100vw; /* Force full viewport width */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw; /* Breaks out of any constrained parent wrappers */
+  margin-right: -50vw;
+  background-color: #fbf9f4; /* Hits the walls edge-to-edge */
+  padding: 80px 0; /* Top and bottom padding */
+  font-family:
+    "Plus Jakarta Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.pricing-calc-container {
+  max-width: 960px;
+  width: 92%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pricing-header-box {
+  margin-bottom: 36px;
+}
+
+.pricing-section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+}
+
+.pricing-section-subtitle {
+  font-size: 0.95rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.pricing-chart-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pricing-chart-row {
+  background-color: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 22px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.pricing-chart-row:hover {
+  transform: translateY(-2px);
+  border-color: #ffc72c;
+  box-shadow: 0 8px 24px rgba(255, 199, 44, 0.15);
+}
+
+.pricing-row-highlight {
+  background-color: #fffbe6;
+  border-color: #ffc72c;
+  box-shadow: 0 4px 16px rgba(255, 199, 44, 0.1);
+}
+
+.pricing-price-tag {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  min-width: 90px;
+}
+
+.pricing-tier-name {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: #334155;
+  min-width: 160px;
+}
+
+/* Perfect horizontal alignment grid for Kitchen, Bath, Bed */
+.pricing-features-grid {
+  display: grid;
+  grid-template-columns: 120px 110px 100px;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.pricing-feature-item {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.pricing-check {
+  color: #d9a300;
+  font-weight: 800;
+}
+
+.pricing-subnote {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #64748b;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+/* ==========================================
+    WHAT'S INCLUDED & ADD-ONS CARD BOX
+    ========================================== */
+.included-card-box {
+  background-color: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 48px;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.included-main-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+}
+
+.included-grid-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px 48px;
+}
+
+.included-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.included-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.925rem;
+  color: #4b5563;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.included-item strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.included-check {
+  color: #d9a300;
+  font-weight: 900;
+  font-size: 1.1rem;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.included-star {
+  color: #ffc72c;
+  font-weight: 900;
+  font-size: 1.1rem;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.addon-price-tag {
+  background-color: rgba(255, 199, 44, 0.15);
+  color: #855800;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  border: 1px solid rgba(255, 199, 44, 0.4);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .pricing-chart-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .pricing-features-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    justify-content: flex-start;
+  }
+  .included-grid-columns {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .included-card-box {
+    padding: 24px;
+  }
+}
