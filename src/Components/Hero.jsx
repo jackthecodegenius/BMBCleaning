@@ -1,6 +1,6 @@
 import React from "react";
 import "./Hero.css";
-import cleaningImage from "../../images/CleaningWoman.jpg";
+import cleaningImage from "../../images/CleaningWoman.webp";
 
 function Hero() {
   return (
