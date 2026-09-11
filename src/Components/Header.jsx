@@ -1,12 +1,11 @@
 import React from "react";
 import "./Header.css";
 import logoImg from "../../images/bmblogo.jpg";
-import AnnouncementBar from "./AnnouncementBar"; // If you made it a separate file
 
 export default function Header() {
   return (
     <header className="site-header">
-      {/* Announcement Bar sits right here at the very top */}
+      {/* Announcement Bar */}
       <div className="announcement-bar">
         <div className="announcement-content">
           <span className="announcement-badge">Special Offer</span>
@@ -17,7 +16,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Your main navigation container */}
+      {/* Main navigation container */}
       <div className="header-container">
         {/* Left Side: Logo & Brand */}
         <div className="header-left">
@@ -27,11 +26,12 @@ export default function Header() {
           </a>
         </div>
 
-        {/* Center/Right Navigation Links matching Homeaglow style */}
+        {/* Right Navigation Links pointing to section IDs */}
         <div className="header-right-group">
           <nav className="nav-links">
-            <a href="/pricing">Pricing</a>
-            <a href="/reviews">Reviews</a>
+            <a href="#services">Services</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#reviews">Reviews</a>
           </nav>
           <a href="#quote" className="quote-btn">
             Free Quote

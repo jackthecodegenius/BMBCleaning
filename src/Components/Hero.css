@@ -139,7 +139,7 @@
    ========================================== */
 .hero-content-box {
   position: absolute;
-  top: 140px;
+  top: 110px;
   right: 32px;
   bottom: 140px;
   width: 440px;
@@ -250,4 +250,22 @@
     left: 20px;
     padding: 8px 12px;
   }
+}
+
+.hero-location-subtext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px; /* Adds a tiny space between the pin and text */
+  margin-top: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+.hero-location-icon {
+  flex-shrink: 0;
+  fill: #ffc72c; /* Matches your button color, or change to your preferred hex */
 }

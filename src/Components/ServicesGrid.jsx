@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PricingCalculator from "./PricingCalculator"; // Import the pricing component
 import "./ServicesGrid.css";
 
 // Import images from your images folder
@@ -64,37 +63,32 @@ export default function ServicesGrid() {
 
         {/* 4 Cards Grid */}
         <div className="services-grid-cards">
-          {services.make
-            ? null
-            : services.map((service, index) => (
-                <div className="service-item-card" key={index}>
-                  <div className="service-img-container">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="service-card-img"
-                    />
-                  </div>
+          {services.map((service, index) => (
+            <div className="service-item-card" key={index}>
+              <div className="service-img-container">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="service-card-img"
+                />
+              </div>
 
-                  <div className="service-card-body">
-                    <h3 className="service-card-title">{service.title}</h3>
-                    <p className="service-card-desc">{service.description}</p>
+              <div className="service-card-body">
+                <h3 className="service-card-title">{service.title}</h3>
+                <p className="service-card-desc">{service.description}</p>
 
-                    <div className="service-badge-pill">✓ {service.badge}</div>
+                <div className="service-badge-pill">✓ {service.badge}</div>
 
-                    <button
-                      className="watch-video-link"
-                      onClick={() => setActiveVideo(service.videoUrl)}
-                    >
-                      Watch Video <span className="arrow-icon">→</span>
-                    </button>
-                  </div>
-                </div>
-              ))}
+                <button
+                  className="watch-video-link"
+                  onClick={() => setActiveVideo(service.videoUrl)}
+                >
+                  Watch Video <span className="arrow-icon">→</span>
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
-
-        {/* Imported Pricing Component */}
-        <PricingCalculator />
       </div>
 
       {/* Video Popup Modal */}

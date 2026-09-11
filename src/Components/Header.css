@@ -14,6 +14,45 @@
   -webkit-font-smoothing: antialiased;
 }
 
+/* Announcement Bar Styles */
+.announcement-bar {
+  width: 100%;
+  background-color: #fffbeb; /* Soft light yellow/cream tone */
+  border-bottom: 1px solid #fef3c7;
+  padding: 10px 16px;
+  text-align: center;
+  font-family:
+    "Plus Jakarta Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.announcement-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: #92400e;
+}
+
+.announcement-badge {
+  background-color: #f59e0b;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.announcement-content strong {
+  font-weight: 800;
+}
+
 .header-container {
   max-width: 1128px;
   width: 95%;
@@ -70,11 +109,29 @@
   font-size: 0.9375rem;
   letter-spacing: -0.02em;
   line-height: 1.5;
+  position: relative; /* Required for the sliding underline */
+  padding-bottom: 4px; /* Space for the underline */
   transition: color 0.15s ease;
 }
 
+/* Sliding black underline effect */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #111111;
+  transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
 .nav-links a:hover {
-  color: #4b5563;
+  color: #111111;
 }
 
 .quote-btn {

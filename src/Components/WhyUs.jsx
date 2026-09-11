@@ -39,7 +39,7 @@ export default function WhyUs() {
         <div className="why-us-left-col">
           <div className="why-us-header-box">
             <h2 className="why-us-title">
-              The care and consistency Liverpool families recognize
+              The care and consistency Liverpool families recognise
             </h2>
             <p className="why-us-lead">
               BMB Cleaning has been showing up reliably across

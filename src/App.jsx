@@ -6,6 +6,7 @@ import Features from "./Components/Features.jsx";
 import ServicesGrid from "./Components/ServicesGrid.jsx";
 import HowItWorks from "./Components/HowItWorks.jsx";
 import WhyUs from "./Components/WhyUs.jsx";
+import PricingCalculator from "./Components/PricingCalculator.jsx";
 
 function App() {
   return (
@@ -14,10 +15,17 @@ function App() {
       <main>
         <Hero />
         <Features />
-        <ServicesGrid />
+        <section id="services">
+          <ServicesGrid />
+        </section>
+        <section id="pricing">
+          <PricingCalculator />
+        </section>
         <WhyUs />
         <HowItWorks />
-        <GoogleReviews />
+        <section id="reviews">
+          <GoogleReviews />
+        </section>
       </main>
     </div>
   );
