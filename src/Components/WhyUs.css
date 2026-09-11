@@ -1,0 +1,172 @@
+/* ==========================================
+    WHY US SECTION STYLING (Color-Controlled Icons)
+    ========================================== */
+.why-us-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 80px 0;
+  font-family:
+    "Plus Jakarta Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.why-us-container {
+  max-width: 1400px;
+  width: 92%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+/* Left Column Layout */
+.why-us-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.why-us-header-box {
+  text-align: left;
+}
+
+.why-us-title {
+  font-size: 2.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.why-us-lead {
+  font-size: 0.925rem;
+  color: #4b5563;
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+.why-us-image-wrapper {
+  width: 100%;
+  height: 430px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 2px solid #f1f5f9;
+}
+
+.why-us-featured-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Right Column Layout */
+.why-us-right-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.why-us-subheading {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.why-us-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Individual Feature Card */
+.why-us-card {
+  background-color: #ffffff;
+  border: 2px solid #f1f5f9;
+  border-radius: 15px;
+  padding: 23px 25px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.015);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.why-us-card:hover {
+  transform: translateY(-1px);
+  border-color: #ffc72c;
+  box-shadow: 0 6px 20px rgba(255, 199, 44, 0.12);
+}
+
+/* Icon Box Styling */
+.why-us-icon-box {
+  background-color: rgba(255, 199, 44, 0.15);
+  border-radius: 10px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.why-us-icon {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #d9a700; /* Forces every symbol to take the exact orange-yellow color */
+  line-height: 1;
+}
+
+/* Text Content Block */
+.why-us-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-grow: 1;
+}
+
+.why-us-card-title {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.why-us-card-text {
+  font-size: 0.825rem;
+  color: #4b5563;
+  line-height: 1.45;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 968px) {
+  .why-us-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .why-us-image-wrapper {
+    height: 320px;
+  }
+}
+
+/* Make the heart icon 1.5x bigger */
+.why-us-card.heart-card .why-us-icon {
+  font-size: 1.225rem; /* 0.95rem multiplied by 1.5 */
+}

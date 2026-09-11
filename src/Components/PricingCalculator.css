@@ -43,6 +43,13 @@
   font-weight: 500;
 }
 
+.highlight-rate {
+  color: #0f172a;
+  background-color: rgba(255, 199, 44, 0.2);
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
 .pricing-chart-stack {
   display: flex;
   flex-direction: column;
@@ -76,18 +83,32 @@
   box-shadow: 0 4px 16px rgba(255, 199, 44, 0.1);
 }
 
+.pricing-price-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 210px; /* Widened to fit price + estimated total example */
+}
+
 .pricing-price-tag {
   font-size: 1.5rem;
   font-weight: 800;
   color: #0f172a;
-  min-width: 90px;
+  white-space: nowrap;
+}
+
+.pricing-est-label {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-top: 2px;
+  white-space: nowrap;
 }
 
 .pricing-tier-name {
   font-size: 1.125rem;
   font-weight: 800;
   color: #334155;
-  min-width: 160px;
+  min-width: 140px;
 }
 
 /* Perfect horizontal alignment grid for Kitchen, Bath, Bed */

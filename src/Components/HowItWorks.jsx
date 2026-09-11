@@ -98,8 +98,7 @@ export default function HowItWorks() {
         <div className="how-it-works-cta-wrapper">
           <button className="how-it-works-btn">Get an Instant Quote</button>
           <p className="how-it-works-subtext">
-            Starting at £149/visit · No credit card required · We won't spam you
-            with follow-up calls.
+            · No credit card required · We won't spam you with follow-up calls.
           </p>
         </div>
       </div>

@@ -1,23 +1,31 @@
 import React, { useState } from "react";
-import PricingCalculator from "./PricingCalculator"; // Import the new component
+import PricingCalculator from "./PricingCalculator"; // Import the pricing component
 import "./ServicesGrid.css";
+
+// Import images from your images folder
+import work1Img from "../../images/work-1.jpg";
+import work2Img from "../../images/work-2.jpg";
+import work3Img from "../../images/work-3.jpg";
+import work4Img from "../../images/work-4.jpg";
 
 export default function ServicesGrid() {
   const [activeVideo, setActiveVideo] = useState(null);
 
   const services = [
     {
-      title: "Regular Cleaning",
+      title: "Deep Clean",
       description:
-        "Ongoing house cleaning designed to help maintain a cleaner home week to week or fortnight to fortnight.",
+        "Comprehensive ongoing house cleaning where deep-cleaning standards are built into every visit, keeping your home pristine week to week.",
       badge: "Best for recurring upkeep",
+      image: work2Img,
       videoUrl: "https://www.instagram.com/p/C_bAcPBMqtQ/embed",
     },
     {
-      title: "Deep Cleaning",
+      title: "Carpet Cleaning",
       description:
         "A more detailed clean for homes that need extra attention before returning to a better everyday standard.",
       badge: "Best for a detailed reset",
+      image: work1Img,
       videoUrl: "https://www.instagram.com/p/C-_Ax0DsT6N/embed",
     },
     {
@@ -25,6 +33,7 @@ export default function ServicesGrid() {
       description:
         "High-pressure washing and surface restoration to clear away dirt, moss, and weather wear from your outdoor spaces.",
       badge: "Best for outdoor refreshment",
+      image: work4Img,
       videoUrl: "https://www.instagram.com/p/C_jDKHTsLHa/embed",
     },
     {
@@ -32,6 +41,7 @@ export default function ServicesGrid() {
       description:
         "Safe and thorough removal of debris, stains, and buildup to protect your roof and boost curb appeal.",
       badge: "Best for property protection",
+      image: work3Img,
       videoUrl: "https://www.instagram.com/p/C_n7dJCsvHN/embed",
     },
   ];
@@ -54,36 +64,40 @@ export default function ServicesGrid() {
 
         {/* 4 Cards Grid */}
         <div className="services-grid-cards">
-          {services.map((service, index) => (
-            <div className="service-item-card" key={index}>
-              <div className="service-img-placeholder">
-                <span className="placeholder-text">Image Coming Soon</span>
-              </div>
+          {services.make
+            ? null
+            : services.map((service, index) => (
+                <div className="service-item-card" key={index}>
+                  <div className="service-img-container">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="service-card-img"
+                    />
+                  </div>
 
-              <div className="service-card-body">
-                <h3 className="service-card-title">{service.title}</h3>
-                <p className="service-card-desc">{service.description}</p>
+                  <div className="service-card-body">
+                    <h3 className="service-card-title">{service.title}</h3>
+                    <p className="service-card-desc">{service.description}</p>
 
-                <div className="service-badge-pill">✓ {service.badge}</div>
+                    <div className="service-badge-pill">✓ {service.badge}</div>
 
-                <button
-                  className="watch-video-link"
-                  onClick={() => setActiveVideo(service.videoUrl)}
-                >
-                  Watch Video <span className="arrow-icon">→</span>
-                </button>
-              </div>
-            </div>
-          ))}
+                    <button
+                      className="watch-video-link"
+                      onClick={() => setActiveVideo(service.videoUrl)}
+                    >
+                      Watch Video <span className="arrow-icon">→</span>
+                    </button>
+                  </div>
+                </div>
+              ))}
         </div>
 
-        {/* ==========================================
-            NEW: Imported Pricing Component
-            ========================================== */}
+        {/* Imported Pricing Component */}
         <PricingCalculator />
       </div>
 
-      {/* Video Popup Modal remains here as it relates to the grid */}
+      {/* Video Popup Modal */}
       {activeVideo && (
         <div
           className="video-modal-overlay"

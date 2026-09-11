@@ -4,19 +4,22 @@ import "./PricingCalculator.css";
 export default function PricingCalculator() {
   const pricingTiers = [
     {
-      price: "£125",
-      title: "Standard Clean",
+      price: "£25/hr",
+      subtitleEst: "e.g., ~£75 total (~3 hours for 1 worker)",
+      title: "Deep Clean",
       items: ["Kitchen", "1 Bath", "1 Bed"],
     },
     {
-      price: "£150",
-      title: "Medium Space",
+      price: "£25/hr",
+      subtitleEst: "e.g., ~£150 total (~3 hours for 2 workers)",
+      title: "Deep Clean",
       items: ["Kitchen", "2 Baths", "2 Beds"],
       isHighlighted: true,
     },
     {
-      price: "£175",
-      title: "Large Family",
+      price: "£25/hr",
+      subtitleEst: "e.g., ~£200 total (~4 hours for 2 workers)",
+      title: "Deep Clean",
       items: ["Kitchen", "2+ Baths", "3+ Beds"],
     },
   ];
@@ -29,7 +32,9 @@ export default function PricingCalculator() {
             How to price your home clean
           </h3>
           <p className="pricing-section-subtitle">
-            Use the chart below to estimate pricing based on your space.
+            Transparent pricing charged at{" "}
+            <strong className="highlight-rate">£25/hr per worker</strong>.
+            Estimated totals based on space:
           </p>
         </div>
 
@@ -39,7 +44,11 @@ export default function PricingCalculator() {
               className={`pricing-chart-row ${tier.isHighlighted ? "pricing-row-highlight" : ""}`}
               key={index}
             >
-              <div className="pricing-price-tag">{tier.price}</div>
+              <div className="pricing-price-group">
+                <div className="pricing-price-tag">{tier.price}</div>
+                <div className="pricing-est-label">{tier.subtitleEst}</div>
+              </div>
+
               <div className="pricing-tier-name">{tier.title}</div>
 
               {/* Leveled Columns Container */}
@@ -59,7 +68,9 @@ export default function PricingCalculator() {
         </div>
 
         <p className="pricing-subnote">
-          * Additional rooms or bathrooms auto-adjust at +£25 each
+          * All cleaning is billed at £25 per hour per worker. Final duration
+          and total price may vary based on property condition. Any add-ons are
+          set prices, not per hour.
         </p>
 
         {/* ==========================================
@@ -97,7 +108,7 @@ export default function PricingCalculator() {
               <div className="included-item">
                 <span className="included-check">✓</span>
                 <div>
-                  <strong>Every Room:</strong> thorough organizing, high & low
+                  <strong>Every Room:</strong> thorough organising, high & low
                   dusting, skirting boards, and vacuuming.
                 </div>
               </div>
@@ -108,7 +119,7 @@ export default function PricingCalculator() {
               <div className="included-item">
                 <span className="included-check">✓</span>
                 <div>
-                  <strong>Bathrooms:</strong> sanitizing toilets, scrubbing
+                  <strong>Bathrooms:</strong> sanitising toilets, scrubbing
                   sinks, showers, bathtubs, and polishing mirrors.
                 </div>
               </div>
@@ -116,17 +127,8 @@ export default function PricingCalculator() {
               <div className="included-item">
                 <span className="included-star">★</span>
                 <div>
-                  <strong>Deep Clean Add-on:</strong>{" "}
-                  <span className="addon-price-tag">+£35</span> — intensive
-                  heavy-duty scrubbing for neglected or buildup areas.
-                </div>
-              </div>
-
-              <div className="included-item">
-                <span className="included-star">★</span>
-                <div>
                   <strong>Oven Clean Add-on:</strong>{" "}
-                  <span className="addon-price-tag">+£35</span> — deep internal
+                  <span className="addon-price-tag">£35</span> — deep internal
                   degreasing of racks, glass, and walls.
                 </div>
               </div>
@@ -134,9 +136,18 @@ export default function PricingCalculator() {
               <div className="included-item">
                 <span className="included-star">★</span>
                 <div>
-                  <strong>Specialist Add-ons:</strong>{" "}
-                  <span className="addon-price-tag">+£50 each</span> — Carpet
-                  shampooing, Patio pressure washing, or Roof debris cleaning.
+                  <strong>Carpet Deep Clean:</strong>{" "}
+                  <span className="addon-price-tag">£120</span> — professional
+                  deep shampooing and stain extraction.
+                </div>
+              </div>
+
+              <div className="included-item">
+                <span className="included-star">★</span>
+                <div>
+                  <strong>Patio or Roof Clean:</strong>{" "}
+                  <span className="addon-price-tag">£150 each</span> — thorough
+                  patio pressure washing or roof debris clearance.
                 </div>
               </div>
             </div>

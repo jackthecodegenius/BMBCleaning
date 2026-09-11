@@ -5,6 +5,7 @@ import GoogleReviews from "./Components/GoogleReviews";
 import Features from "./Components/Features.jsx";
 import ServicesGrid from "./Components/ServicesGrid.jsx";
 import HowItWorks from "./Components/HowItWorks.jsx";
+import WhyUs from "./Components/WhyUs.jsx";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Hero />
         <Features />
         <ServicesGrid />
+        <WhyUs />
         <HowItWorks />
         <GoogleReviews />
       </main>
