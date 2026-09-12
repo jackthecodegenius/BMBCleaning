@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header className="site-header">
       {/* Announcement Bar */}
-      <div className="announcement-bar">
+      {/* <div className="announcement-bar">
         <div className="announcement-content">
           <span className="announcement-badge">Special Offer</span>
           <p>
@@ -14,7 +14,7 @@ export default function Header() {
             <strong>Free Quote</strong>
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/* Main navigation container */}
       <div className="header-container">

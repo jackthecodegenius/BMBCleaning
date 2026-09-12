@@ -1,7 +1,7 @@
 .services-overview-section {
   width: 100%;
   background-color: #ffffff;
-  padding: 80px 0;
+  padding: 80px 0 30px 0; /* Increased the top padding from 40px back up to 80px */
   font-family:
     "Plus Jakarta Sans",
     -apple-system,

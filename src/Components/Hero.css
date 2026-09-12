@@ -11,32 +11,32 @@
 }
 
 .hero-container {
-  max-width: 1128px;
-  width: 95%;
+  max-width: 1200px;
+  width: 92%;
   margin: 0 auto;
   padding: 0 16px;
 }
 
-.hero-card-wrapper {
+.hero-split-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 445px;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-image-side {
   position: relative;
   width: 100%;
-  background: transparent; /* <--- Removes any background from the outer wrapper */
-  box-shadow: none; /* <--- Removes the old square box shadow */
-  border-radius: 0; /* <--- Removes old wrapper corners */
-  overflow: visible;
-  display: flex;
-  min-height: 700px;
 }
 
 .hero-image-container {
   width: 100%;
-  height: 700px;
+  height: 540px;
   position: relative;
   background: transparent;
-  overflow: visible;
+  overflow: hidden; /* <--- Ensures image stays neatly inside the rounded corners */
 }
 
-/* Add a tint overlay using a pseudo-element on the container */
 .hero-image-container::after {
   content: "";
   position: absolute;
@@ -44,13 +44,21 @@
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 140px; /* Matches your oval shape */
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.35
-  ); /* <--- (0,0,0) is black. Adjust 0.25 to make it darker or lighter */
+  border-radius: 32px;
+  /* Layer 1: A subtle all-over warm orange tint
+     Layer 2: A localized stronger gradient fade at the bottom (starting at 65%) */
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(217, 119, 6, 0.08),
+      rgba(217, 119, 6, 0.08)
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(217, 119, 6, 0) 65%,
+      rgba(217, 119, 6, 0.5) 100%
+    );
+  mix-blend-mode: overlay; /* Blends the warm tones naturally into the photo */
   pointer-events: none;
   z-index: 2;
 }
@@ -58,20 +66,19 @@
 .hero-cleaning-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* <--- Fills the box edge-to-edge with zero grey borders */
+  object-position: center top; /* <--- Focuses more towards the top so her head/face stays in frame */
   display: block;
-  border-radius: 140px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  border-radius: 32px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 1;
 }
-/* ==========================================
-   FLOATING REVIEW BADGE (Pushed fully outside)
-   ========================================== */
+/* FLOATING REVIEW BADGE */
 .hero-floating-badge {
   position: absolute;
-  top: 90px;
-  left: -70px; /* <--- Pushes it completely outside the left edge into clear space */
+  bottom: 30px;
+  left: -30px;
   background-color: #ffffff;
   padding: 16px 20px;
   border-radius: 16px;
@@ -80,10 +87,11 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-  z-index: 50; /* High z-index ensures it sits cleanly on top */
+  z-index: 50;
   border: 1px solid rgba(0, 0, 0, 0.04);
-  width: 200px;
+  width: 210px;
 }
+
 .badge-avatars {
   display: flex;
   align-items: center;
@@ -122,7 +130,6 @@
   color: #4b5563;
   line-height: 1.35;
   font-weight: 500;
-  white-space: normal;
 }
 
 .badge-text-content strong {
@@ -134,37 +141,33 @@
   margin-bottom: 2px;
 }
 
-/* ==========================================
-   CONTENT BOX & TYPOGRAPHY
-   ========================================== */
+/* CONTENT SIDE & BOX WITH YELLOW-ORANGE OUTLINE */
+.hero-content-side {
+  width: 100%;
+}
+
 .hero-content-box {
-  position: absolute;
-  top: 110px;
-  right: 32px;
-  bottom: 140px;
-  width: 440px;
   background-color: #ffffff;
   border-radius: 20px;
-  padding: 0px 36px 30px 36px;
+  padding: 30px 32px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  z-index: 10;
+  border: 2.5px solid #d97706;
+  box-shadow: 0 10px 30px rgba(217, 119, 6, 0.12);
 }
 
 .hero-title {
   font-size: 2.25rem;
   font-weight: 800;
   color: #0f172a;
-  margin-top: 30px;
   margin-bottom: 12px;
   letter-spacing: -0.04em;
   line-height: 1.08;
 }
 
 .hero-description {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #334155;
   line-height: 1.45;
@@ -173,11 +176,11 @@
 }
 
 .hero-subtext {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: #64748b;
-  line-height: 1.4;
-  margin-bottom: 20px;
+  line-height: 1.5;
+  margin-bottom: 24px;
 }
 
 .hero-zip-container {
@@ -210,6 +213,11 @@
   cursor: pointer;
   letter-spacing: -0.02em;
   transition: background-color 0.15s ease;
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 14px 20px;
+  text-decoration: none;
 }
 
 .zip-go-btn:hover {
@@ -218,54 +226,47 @@
 
 .hero-trust-points {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  margin-top: 14px;
+  margin-top: 16px;
   font-size: 0.75rem;
   font-weight: 700;
   color: #4b5563;
   letter-spacing: -0.01em;
-  text-align: center;
-}
-
-@media (max-width: 1024px) {
-  .hero-card-wrapper {
-    flex-direction: column;
-    min-height: auto;
-  }
-  .hero-content-box {
-    position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    width: 100%;
-    box-shadow: none;
-    padding: 24px 16px;
-  }
-  .hero-image-container {
-    height: 280px;
-  }
-  .hero-floating-badge {
-    top: 20px;
-    left: 20px;
-    padding: 8px 12px;
-  }
 }
 
 .hero-location-subtext {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  gap: 5px; /* Adds a tiny space between the pin and text */
-  margin-top: 6px;
+  gap: 5px;
+  margin-top: 8px;
   font-size: 0.75rem;
   font-weight: 600;
   color: #64748b;
   letter-spacing: -0.01em;
-  text-align: center;
 }
 
 .hero-location-icon {
   flex-shrink: 0;
-  fill: #ffc72c; /* Matches your button color, or change to your preferred hex */
+  fill: #ffc72c;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .hero-split-wrapper {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .hero-image-container {
+    height: 360px;
+  }
+  .hero-floating-badge {
+    left: 15px;
+    bottom: 15px;
+    padding: 10px 14px;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
 }
