@@ -9,19 +9,36 @@ import WhyUs from "./Components/WhyUs.jsx";
 import PricingCalculator from "./Components/PricingCalculator.jsx";
 import Footer from "./Components/Footer.jsx";
 import TermsPage from "./Components/TermsPage.jsx";
-import PrivacyPage from "./Components/PrivacyPage.jsx"; // Import privacy page
+import PrivacyPage from "./Components/PrivacyPage.jsx";
+import GetInTouch from "./Components/GetInTouch.jsx";
 
 function App() {
-  const [currentView, setCurrentView] = useState("home"); // "home", "terms", or "privacy"
+  const [currentView, setCurrentView] = useState("home"); // "home", "terms", "privacy", or "contact"
 
   return (
     <div className="app-container">
-      <Header />
+      <Header
+        onNavigateHome={() => setCurrentView("home")}
+        onOpenContact={() => setCurrentView("contact")}
+        currentView={currentView}
+      />
       <main>
         {currentView === "terms" ? (
           <TermsPage />
         ) : currentView === "privacy" ? (
           <PrivacyPage />
+        ) : currentView === "contact" ? (
+          <GetInTouch
+            onNavigateHomePricing={(e) => {
+              e.preventDefault();
+              setCurrentView("home");
+              setTimeout(() => {
+                document
+                  .getElementById("pricing")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }, 50);
+            }}
+          />
         ) : (
           <>
             <Hero />

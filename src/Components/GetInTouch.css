@@ -1,0 +1,200 @@
+.git-page-wrapper {
+  width: 100%;
+  background-color: #fcfbf7; /* Matches your light site background */
+  padding: 60px 0 80px 0;
+  font-family:
+    "Plus Jakarta Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.git-header-section {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px auto;
+  padding: 0 16px;
+}
+
+.git-badge {
+  background-color: rgba(255, 199, 44, 0.15);
+  border: 1px solid rgba(255, 199, 44, 0.4);
+  color: #855800;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.git-main-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+
+.git-subtitle {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* Layout Split */
+.git-content-container {
+  max-width: 1200px;
+  width: 92%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.git-form-card,
+.git-locations-side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.git-card-heading {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+/* Form Styles */
+.git-form {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 2px solid rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.git-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.git-label {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: -0.01em;
+}
+
+.required-star {
+  color: #d97706;
+}
+
+.git-input,
+.git-select,
+.git-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1.5px solid #e2e8f0;
+  background-color: #ffffff;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  color: #0f172a;
+  outline: none;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.git-input:focus,
+.git-select:focus,
+.git-textarea:focus {
+  border-color: #d97706;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.12);
+}
+
+.git-submit-btn {
+  background-color: #ffc72c;
+  color: #111111;
+  border: none;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 0.9375rem;
+  padding: 14px 24px;
+  cursor: pointer;
+  letter-spacing: -0.02em;
+  transition: background-color 0.15s ease;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.git-submit-btn:hover {
+  background-color: #f3bd20;
+}
+
+/* Location Cards */
+.git-location-box {
+  background-color: rgba(255, 199, 44, 0.08);
+  border: 1.5px solid rgba(255, 199, 44, 0.3);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.location-title {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.location-detail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.loc-icon {
+  font-size: 1rem;
+}
+
+.git-pricing-link-container {
+  margin-top: 4px;
+  padding-left: 30px; /* Aligns with the text beside the icons above */
+}
+
+.git-pricing-more-link {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #d97706;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+
+.git-pricing-more-link:hover {
+  color: #b48300;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .git-content-container {
+    grid-template-columns: 1fr;
+  }
+}

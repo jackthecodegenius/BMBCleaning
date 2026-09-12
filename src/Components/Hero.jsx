@@ -48,8 +48,8 @@ function Hero() {
                 cleaning team.
               </p>
               <p className="hero-subtext">
-                Speak directly with us for professional carpet, rug, and sofa
-                cleaning services, plus deep cleaning solutions in your area.
+                Book professional Deep Cleans, Carpet Cleaning, Patio Pressure
+                Washing, and Roof Care solutions in your area.
               </p>
 
               <div className="hero-zip-container">
