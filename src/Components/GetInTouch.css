@@ -1,6 +1,6 @@
 .git-page-wrapper {
   width: 100%;
-  background-color: #fcfbf7; /* Matches your light site background */
+  background-color: #fbfbf9; /* Super light, a subtle whisper off-white */
   padding: 60px 0 80px 0;
   font-family:
     "Plus Jakarta Sans",
@@ -176,7 +176,7 @@
 
 .git-pricing-link-container {
   margin-top: 4px;
-  padding-left: 30px; /* Aligns with the text beside the icons above */
+  padding-left: 30px;
 }
 
 .git-pricing-more-link {

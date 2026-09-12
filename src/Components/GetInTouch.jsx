@@ -102,7 +102,7 @@ export default function GetInTouch({ onNavigateHomePricing }) {
       {/* Top Header Section */}
       <div className="git-header-section">
         <div className="git-badge">Contact Us</div>
-        <h1 className="git-main-title">Get a free quote</h1>
+        <h1 className="git-main-title">Get A Free Quote</h1>
         <p className="git-subtitle">
           Have questions about our services or ready to schedule your cleaning?
           <br />
@@ -240,7 +240,7 @@ export default function GetInTouch({ onNavigateHomePricing }) {
             </div>
             <div className="location-detail">
               <span className="loc-icon">✉️</span>
-              <span>jackcockerill2222@gmail.com</span>
+              <span>info@bmbcleaning.com</span>
             </div>
           </div>
 
