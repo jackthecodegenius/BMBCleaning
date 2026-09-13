@@ -7,7 +7,7 @@ function Hero({ onOpenContact }) {
     <section className="hero-section">
       <div className="hero-container">
         <div className="hero-split-wrapper">
-          {/* Left Side: Clean Split Image & Floating Review Badge */}
+          {/* Left Side: Clean Split Image (Hidden on mobile via CSS) */}
           <div className="hero-image-side">
             <div className="hero-image-container">
               <img
@@ -15,24 +15,6 @@ function Hero({ onOpenContact }) {
                 alt="BMB Cleaning Professional"
                 className="hero-cleaning-img"
               />
-              {/* Floating Review Badge */}
-              {/* <div className="hero-floating-badge">
-                <div className="badge-avatars">
-                  <img
-                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
-                    alt="Reviewer 1"
-                  />
-                  <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80"
-                    alt="Reviewer 2"
-                  />
-                  <div className="badge-number-circle">3</div>
-                </div>
-                <div className="badge-text-content">
-                  <strong>Rated 5.0</strong>
-                  <span>by 90+ Local Homeowners in Liverpool</span>
-                </div>
-              </div> */}
             </div>
           </div>
 
