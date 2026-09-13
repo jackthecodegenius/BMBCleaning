@@ -1,8 +1,15 @@
 import React, { useState } from "react";
-import emailjs from "emailjs-com";
+// ==========================================
+// EMAILJS: Commented out for now (can uncomment later)
+// import emailjs from "emailjs-com";
+// ==========================================
 import "./GetInTouch.css";
 
 export default function GetInTouch({ onNavigateHomePricing }) {
+  // ==========================================
+  // FORM STATE: Commented out since the form is hidden
+  // ==========================================
+  /*
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,7 +22,6 @@ export default function GetInTouch({ onNavigateHomePricing }) {
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
-    // Automatically uppercase postcodes as they type for a cleaner look
     if (e.target.name === "postcode") {
       setFormData({
         ...formData,
@@ -30,14 +36,12 @@ export default function GetInTouch({ onNavigateHomePricing }) {
     e.preventDefault();
     setErrorMessage("");
 
-    // 1. Email validation: Must include "@"
     if (!formData.email.includes("@")) {
       setErrorMessage("Please enter a valid email address containing '@'.");
       return;
     }
 
-    // 2. Phone number validation: Must be between 10 and 11 digits (if provided)
-    const cleanPhone = formData.phone.replace(/\s+/g, ""); // strip spaces
+    const cleanPhone = formData.phone.replace(/\s+/g, "");
     if (
       cleanPhone &&
       (cleanPhone.length < 10 || cleanPhone.length > 11 || isNaN(cleanPhone))
@@ -46,7 +50,6 @@ export default function GetInTouch({ onNavigateHomePricing }) {
       return;
     }
 
-    // 3. Postcode validation: Must start with "L" (Liverpool area check)
     const cleanPostcode = formData.postcode.trim();
     if (!cleanPostcode.startsWith("L")) {
       setErrorMessage(
@@ -83,8 +86,6 @@ export default function GetInTouch({ onNavigateHomePricing }) {
             postcode: "",
             message: "",
           });
-
-          // Smooth scroll back to the very top so the success message is immediately visible
           window.scrollTo({ top: 0, behavior: "smooth" });
         },
         (err) => {
@@ -96,172 +97,80 @@ export default function GetInTouch({ onNavigateHomePricing }) {
         },
       );
   };
+  */
 
   return (
     <div className="git-page-wrapper">
       {/* Top Header Section */}
       <div className="git-header-section">
         <div className="git-badge">Contact Us</div>
-        <h1 className="git-main-title">Get A Free Quote</h1>
+        <h1 className="git-main-title">Get In Touch</h1>
         <p className="git-subtitle">
           Have questions about our services or ready to schedule your cleaning?
           <br />
-          We’re here to help make your home sparkle.
+          Chat with us directly on WhatsApp for a fast response.
         </p>
       </div>
 
-      {/* Main Content Split Grid */}
-      <div className="git-content-container">
-        {/* Left Side: Contact Form */}
-        <div className="git-form-card">
-          <h2 className="git-card-heading">Send us a message</h2>
-
-          <form className="git-form" onSubmit={handleSubmit}>
-            <div className="git-input-group">
-              <label className="git-label">Your Name</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="git-input"
-                placeholder="John Doe*"
-                required
-              />
+      {/* Main 3-Column Grid Container */}
+      <div className="git-content-container-single">
+        <div className="git-locations-side-centered">
+          {/* Card 1: Liverpool Details & WhatsApp Button */}
+          <div className="git-location-box git-box-featured">
+            <div className="git-box-header">
+              <div className="git-icon-badge">📍</div>
+              <h3 className="location-title">Liverpool Office</h3>
             </div>
-
-            <div className="git-input-group">
-              <label className="git-label">Email Address</label>
-              <input
-                type="text"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="git-input"
-                placeholder="john@example.com*"
-                required
-              />
-            </div>
-
-            <div className="git-input-group">
-              <label className="git-label">
-                Phone Number{" "}
-                <span style={{ fontWeight: "400", color: "#6b7280" }}>
-                  (Optional)
-                </span>
-              </label>
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                className="git-input"
-                placeholder="e.g. 07847414579"
-              />
-            </div>
-
-            <div className="git-input-group">
-              <label className="git-label">
-                Postcode <span className="required-star">*</span>
-              </label>
-              <input
-                type="text"
-                name="postcode"
-                value={formData.postcode}
-                onChange={handleChange}
-                className="git-input"
-                placeholder="e.g. L12 5JE*"
-                required
-              />
-            </div>
-
-            <div className="git-input-group">
-              <label className="git-label">Your Message</label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                className="git-textarea"
-                rows="4"
-                placeholder="How can we help you?"
-                required
-              ></textarea>
-            </div>
-
-            {/* Error Message Display */}
-            {errorMessage && (
-              <p
-                style={{
-                  color: "#dc2626",
-                  fontSize: "0.875rem",
-                  fontWeight: "600",
-                  textAlign: "center",
-                  marginBottom: "10px",
-                }}
-              >
-                {errorMessage}
-              </p>
-            )}
-
-            <button type="submit" className="git-submit-btn">
-              {status === "sending..." ? "Sending..." : "Send Message"}
-            </button>
-
-            {status === "success" && (
-              <p
-                style={{
-                  color: "#16a34a",
-                  fontSize: "0.875rem",
-                  fontWeight: "600",
-                  textAlign: "center",
-                  marginTop: "10px",
-                }}
-              >
-                Message sent successfully! We'll be in touch.
-              </p>
-            )}
-          </form>
-        </div>
-
-        {/* Right Side: Locations & Info Cards */}
-        <div className="git-locations-side">
-          <h2 className="git-card-heading">Contact information</h2>
-
-          {/* Liverpool Details Card */}
-          <div className="git-location-box">
-            <h3 className="location-title">Liverpool</h3>
             <div className="location-detail">
-              <span className="loc-icon">📍</span>
+              <span className="loc-icon">🏠</span>
               <span>94 Princes Rd, Liverpool, L8 8AD</span>
             </div>
             <div className="location-detail">
               <span className="loc-icon">📞</span>
               <span>07498444504</span>
             </div>
-            <div className="location-detail">
-              <span className="loc-icon">✉️</span>
-              <span>info@bmbcleaning.com</span>
+
+            <div style={{ marginTop: "auto", paddingTop: "12px" }}>
+              <a
+                href="https://wa.me/447498444504?text=Hi%2C%20I%27m%20interested%20in%20booking%20a%20cleaning%20service."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="git-whatsapp-btn"
+              >
+                <span className="loc-icon" style={{ fontSize: "1.2rem" }}>
+                  💬
+                </span>{" "}
+                Chat with us on WhatsApp
+              </a>
             </div>
           </div>
 
-          {/* Response Time Card */}
+          {/* Card 2: Response Times */}
           <div className="git-location-box">
-            <h3 className="location-title">Response Times</h3>
-            <div className="location-detail">
-              <span className="loc-icon">💬</span>
-              <span>Expect a response via text or call in under 24 hours.</span>
+            <div className="git-box-header">
+              <div className="git-icon-badge">⚡</div>
+              <h3 className="location-title">Response Times</h3>
             </div>
-            <div className="location-detail">
-              <span className="loc-icon">📧</span>
-              <span>Expect an email response within up to 48 hours.</span>
+            <div
+              className="location-detail"
+              style={{ alignItems: "flex-start", lineHeight: "1.6" }}
+            >
+              <span className="loc-icon">⏱️</span>
+              <span>
+                Expect a lightning-fast response via WhatsApp during regular
+                working hours.
+              </span>
             </div>
           </div>
 
-          {/* Pricing Reminder Card with Hyperlink */}
+          {/* Card 3: Pricing Note */}
           <div className="git-location-box">
-            <h3 className="location-title">Pricing Note</h3>
+            <div className="git-box-header">
+              <div className="git-icon-badge">💷</div>
+              <h3 className="location-title">Pricing Note</h3>
+            </div>
             <div className="location-detail">
-              <span className="loc-icon">💷</span>
+              <span className="loc-icon">✨</span>
               <span>Cleaning is charged at £25 per hour per person.</span>
             </div>
             <div className="location-detail">
@@ -276,7 +185,7 @@ export default function GetInTouch({ onNavigateHomePricing }) {
                 onClick={onNavigateHomePricing}
                 className="git-pricing-more-link"
               >
-                More information →
+                View full pricing details →
               </a>
             </div>
           </div>

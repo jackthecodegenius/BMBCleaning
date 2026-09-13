@@ -41,10 +41,10 @@ export default function PrivacyPage() {
                 We do not utilize automated online registration forms or harvest
                 data databases through this site.
               </strong>{" "}
-              Any personal information—such as your name, phone number, email
-              address, or property address—is only provided when you voluntarily
-              choose to contact us directly via telephone, text message, or
-              direct email to arrange a cleaning service.
+              Any personal information—such as your name, phone number, or
+              property address—is only provided when you voluntarily choose to
+              contact us directly via telephone or text message to arrange a
+              cleaning service.
             </p>
           </div>
 
@@ -103,7 +103,7 @@ export default function PrivacyPage() {
               Under UK data protection laws, you have the right to request
               access to any personal information we hold about you, or to ask
               that we correct or delete your contact details at any time by
-              reaching out to us directly.
+              reaching out to us directly by phone.
             </p>
           </div>
 
@@ -124,7 +124,7 @@ export default function PrivacyPage() {
             <p>
               If you have any questions or concerns regarding this Privacy
               Policy or how your information is handled, please contact us by
-              email at <strong>support@bmbcleaning.co.uk</strong>.
+              phone.
             </p>
           </div>
         </div>

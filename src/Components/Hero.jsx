@@ -2,7 +2,7 @@ import React from "react";
 import "./Hero.css";
 import cleaningImage from "../../images/CleaningWoman.webp";
 
-function Hero() {
+function Hero({ onOpenContact }) {
   return (
     <section className="hero-section">
       <div className="hero-container">
@@ -55,7 +55,14 @@ function Hero() {
               <div className="hero-zip-container">
                 <span className="zip-label">Get in touch now:</span>
                 <div className="zip-input-group">
-                  <a href="tel:07498444504" className="zip-go-btn">
+                  <a
+                    href="#quote"
+                    className="zip-go-btn"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onOpenContact();
+                    }}
+                  >
                     Free Quote
                   </a>
                 </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import "./HowItWorks.css";
 
-export default function HowItWorks() {
+export default function HowItWorks({ onOpenContact }) {
   const steps = [
     {
       number: "1",
@@ -96,7 +96,15 @@ export default function HowItWorks() {
         </div>
 
         <div className="how-it-works-cta-wrapper">
-          <button className="how-it-works-btn">Get an Instant Quote</button>
+          <button
+            className="how-it-works-btn"
+            onClick={(e) => {
+              e.preventDefault();
+              onOpenContact();
+            }}
+          >
+            Get an Instant Quote
+          </button>
           <p className="how-it-works-subtext">
             · No credit card required · We won't spam you with follow-up calls.
           </p>

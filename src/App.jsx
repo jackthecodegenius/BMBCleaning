@@ -41,7 +41,8 @@ function App() {
           />
         ) : (
           <>
-            <Hero />
+            {/* Added the prop here so the Hero button knows how to open the contact view */}
+            <Hero onOpenContact={() => setCurrentView("contact")} />
             <Features />
             <section id="services">
               <ServicesGrid />
@@ -50,7 +51,7 @@ function App() {
               <PricingCalculator />
             </section>
             <WhyUs />
-            <HowItWorks />
+            <HowItWorks onOpenContact={() => setCurrentView("contact")} />
             <section id="reviews">
               <GoogleReviews />
             </section>
@@ -60,6 +61,8 @@ function App() {
       <Footer
         onOpenTerms={() => setCurrentView("terms")}
         onOpenPrivacy={() => setCurrentView("privacy")}
+        onOpenContact={() => setCurrentView("contact")}
+        onNavigateHome={() => setCurrentView("home")}
       />
     </div>
   );

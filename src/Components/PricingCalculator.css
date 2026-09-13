@@ -236,3 +236,12 @@
     padding: 24px;
   }
 }
+
+.included-disclaimer {
+  color: #ef4444;
+  font-size: 0.85rem;
+  font-style: italic;
+  text-align: center;
+  margin-top: 24px; /* Gives it breathing room below the columns */
+  margin-bottom: 0;
+}

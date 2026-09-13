@@ -26,7 +26,7 @@ export default function TermsPage() {
             this Agreement at any time, effective upon posting of an updated
             version on the website. Your continued use of the Service after any
             such changes shall constitute your consent to such changes. If you
-            have any questions, please contact us at support@bmbcleaning.co.uk.
+            have any questions, please contact us by phone.
           </p>
 
           <div className="terms-security-notice">
@@ -123,11 +123,10 @@ export default function TermsPage() {
             <h3>Theft, Damage & Liability Policy</h3>
             <p>
               While we handle your property with the utmost care, accidents can
-              occasionally occur. Any damage or loss claims must be reported to
-              support@bmbcleaning.co.uk within 24 hours of service completion.
-              BMB Cleaning's liability for accidental property damage is
-              evaluated fairly and capped at the value of the specific cleaning
-              service provided.
+              occasionally occur. Any damage or loss claims must be reported by
+              phone within 24 hours of service completion. BMB Cleaning's
+              liability for accidental property damage is evaluated fairly and
+              capped at the value of the specific cleaning service provided.
             </p>
           </div>
 
@@ -174,8 +173,7 @@ export default function TermsPage() {
             <p>
               If you require any more information or have any questions about
               these Terms and Conditions, please feel free to contact us by
-              email at <strong>support@bmbcleaning.co.uk</strong> or visit our
-              main website portal.
+              phone or visit our main website portal.
             </p>
           </div>
         </div>

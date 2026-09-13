@@ -2,32 +2,65 @@ import React from "react";
 import "./Footer.css";
 import logoImg from "../../images/bmblogo.jpg";
 
-export default function Footer({ onOpenTerms, onOpenPrivacy }) {
+export default function Footer({
+  onOpenTerms,
+  onOpenPrivacy,
+  onOpenContact,
+  onNavigateHome,
+}) {
   return (
     <footer className="footer-main-section">
       <div className="footer-main-container">
         <div className="footer-grid">
           <div className="footer-col brand-col">
             <div className="footer-brand-row">
-              <img
-                src={logoImg}
-                alt="BMB Cleaning Logo"
-                className="footer-logo-sm"
-              />
-              <span className="footer-brand-title">BMB Cleaning</span>
+              <a
+                href="/"
+                className="footer-logo-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = "/";
+                }}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  textDecoration: "none",
+                }}
+              >
+                <img
+                  src={logoImg}
+                  alt="BMB Cleaning Logo"
+                  className="footer-logo-sm"
+                />
+                <span className="footer-brand-title">BMB Cleaning</span>
+              </a>
             </div>
             <ul className="footer-simple-list">
               <li>
-                <a href="#services">Services</a>
+                <a href="#services" onClick={onNavigateHome}>
+                  Services
+                </a>
               </li>
               <li>
-                <a href="#pricing">Pricing</a>
+                <a href="#pricing" onClick={onNavigateHome}>
+                  Pricing
+                </a>
               </li>
               <li>
-                <a href="#reviews">Reviews</a>
+                <a href="#reviews" onClick={onNavigateHome}>
+                  Reviews
+                </a>
               </li>
             </ul>
-            <a href="#pricing" className="footer-signin-btn">
+            <a
+              href="#quote"
+              className="footer-signin-btn"
+              onClick={(e) => {
+                e.preventDefault();
+                onOpenContact();
+              }}
+            >
               Free Quote
             </a>
           </div>
@@ -88,24 +121,8 @@ export default function Footer({ onOpenTerms, onOpenPrivacy }) {
             </button>
           </div>
 
-          {/* Social Icons with exact links */}
+          {/* Social Icons (Instagram only) */}
           <div className="footer-social-icons">
-            <a
-              href="https://www.facebook.com/BMBCleaning/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-social-btn"
-              aria-label="Facebook"
-            >
-              <svg
-                width="20"
-                height="20"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
-              </svg>
-            </a>
             <a
               href="https://www.instagram.com/bmbcleaning/"
               target="_blank"

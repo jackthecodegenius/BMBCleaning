@@ -1,7 +1,7 @@
 .git-page-wrapper {
   width: 100%;
-  background-color: #fbfbf9; /* Super light, a subtle whisper off-white */
-  padding: 60px 0 80px 0;
+  background-color: #fbfbf9;
+  padding: 60px 0 90px 0;
   font-family:
     "Plus Jakarta Sans",
     -apple-system,
@@ -13,7 +13,7 @@
 .git-header-section {
   text-align: center;
   max-width: 680px;
-  margin: 0 auto 48px auto;
+  margin: 0 auto 52px auto;
   padding: 0 16px;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .git-main-title {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   font-weight: 800;
   color: #0f172a;
   letter-spacing: -0.03em;
@@ -40,122 +40,79 @@
 }
 
 .git-subtitle {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #4b5563;
-  line-height: 1.5;
+  line-height: 1.6;
   font-weight: 500;
 }
 
-/* Layout Split */
-.git-content-container {
-  max-width: 1200px;
+/* Container width for 3 columns */
+.git-content-container-single {
+  max-width: 1240px;
   width: 92%;
   margin: 0 auto;
+}
+
+/* 3-column grid */
+.git-locations-side-centered {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 32px;
-  align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
 }
 
-.git-form-card,
-.git-locations-side {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.git-card-heading {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #0f172a;
-  letter-spacing: -0.02em;
-}
-
-/* Form Styles */
-.git-form {
-  background-color: #ffffff;
-  border-radius: 20px;
-  padding: 32px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-  border: 2px solid rgba(0, 0, 0, 0.04);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.git-input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.git-label {
-  font-size: 0.8125rem;
-  font-weight: 700;
-  color: #111111;
-  letter-spacing: -0.01em;
-}
-
-.required-star {
-  color: #d97706;
-}
-
-.git-input,
-.git-select,
-.git-textarea {
-  width: 100%;
-  padding: 12px 16px;
-  border-radius: 12px;
-  border: 1.5px solid #e2e8f0;
-  background-color: #ffffff;
-  font-family: inherit;
-  font-size: 0.9375rem;
-  color: #0f172a;
-  outline: none;
-  transition:
-    border-color 0.15s ease,
-    box-shadow 0.15s ease;
-}
-
-.git-input:focus,
-.git-select:focus,
-.git-textarea:focus {
-  border-color: #d97706;
-  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.12);
-}
-
-.git-submit-btn {
-  background-color: #ffc72c;
-  color: #111111;
-  border: none;
-  border-radius: 50px;
-  font-weight: 800;
-  font-size: 0.9375rem;
-  padding: 14px 24px;
-  cursor: pointer;
-  letter-spacing: -0.02em;
-  transition: background-color 0.15s ease;
-  text-align: center;
-  margin-top: 8px;
-}
-
-.git-submit-btn:hover {
-  background-color: #f3bd20;
-}
-
-/* Location Cards */
+/* Location/Info Cards - Spiced up with pure white, shadows, and smooth hover */
 .git-location-box {
-  background-color: rgba(255, 199, 44, 0.08);
-  border: 1.5px solid rgba(255, 199, 44, 0.3);
-  border-radius: 16px;
-  padding: 24px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  padding: 32px 28px;
   display: flex;
   flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  box-sizing: border-box;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.03),
+    0 1px 3px rgba(0, 0, 0, 0.02);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.git-location-box:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.06),
+    0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+/* Subtle highlight border for the main WhatsApp card */
+.git-box-featured {
+  border: 1.5px solid rgba(37, 211, 102, 0.3);
+  background: linear-gradient(to bottom, #ffffff 0%, #f9fdfa 100%);
+}
+
+.git-box-header {
+  display: flex;
+  align-items: center;
   gap: 12px;
+  margin-bottom: 4px;
+}
+
+.git-icon-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background-color: rgba(255, 199, 44, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
 }
 
 .location-title {
-  font-size: 1.125rem;
+  font-size: 1.2rem;
   font-weight: 800;
   color: #0f172a;
   letter-spacing: -0.02em;
@@ -164,27 +121,55 @@
 .location-detail {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.875rem;
+  gap: 12px;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #4b5563;
 }
 
 .loc-icon {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* WhatsApp Button Styling - Vibrant & High Conversion */
+.git-whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #25d366;
+  color: #ffffff;
+  padding: 14px 20px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition:
+    background-color 0.15s ease,
+    transform 0.1s ease,
+    box-shadow 0.15s ease;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+}
+
+.git-whatsapp-btn:hover {
+  background-color: #20ba5a;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
 }
 
 .git-pricing-link-container {
-  margin-top: 4px;
-  padding-left: 30px;
+  margin-top: auto;
+  padding-top: 12px;
 }
 
 .git-pricing-more-link {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: #d97706;
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-underline-offset: 4px;
   transition: color 0.15s ease;
 }
 
@@ -192,9 +177,9 @@
   color: #b48300;
 }
 
-/* Responsive */
+/* Responsive: stack back to 1 column on smaller mobile screens */
 @media (max-width: 968px) {
-  .git-content-container {
+  .git-locations-side-centered {
     grid-template-columns: 1fr;
   }
 }
